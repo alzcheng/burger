@@ -1,29 +1,56 @@
 <h1>Burger App</h1>
 
 <p>Manage quotes with this app</p>
+<section class="row">
+    <section class="col-md-8">
+        {{#each burgers}}
+        {{#unless devoured}}
+        <section class="row">
+            <section class="col-md-8">
+                <div class="card uneaten-burgers">
+                    <div class="card-body">{{burger_name}}</div>
+                </div>
+            </section>
 
-<!-- Pass in data from server.js -->
-<ul>
-    {{#each burgers}}
-    <li>
-        <p><span class="label">ID:</span> {{this.id}}</p>
-        <p><span class="label">Burger:</span> {{this.burger_name}}</p>
-        <p><span class="label">Devour:</span> {{this.devoured}}</p>
+            <section class="col-md-4">
+                <button data-id="{{this.id}}" class="btn btn-primary float-left devour-burger-btn">Devour</button>
+            </section>
+        </section>
+        {{/unless}}
+        {{/each}}
+    </section>
+    <section class="col-md-4">
+        <div class="card" id="devoured-burgers">
+            <ul class="list-group list-group-flush">
+                {{#each burgers}}
+                {{#if devoured}}
+                <li class="list-group-item">{{burger_name}}</li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
 
-        <button data-id="{{this.id}}" class="devour-burger">Devour</button>
-    </li>
-    {{/each}}
-</ul>
+    </section>
+</section>
+<section class="row">
+    <section class="col-md-4">
+    </section>
+    <section class="col-md-4">
+        <div id="form-entry">
 
+            <h2>Add a Burger</h2>
 
-<h2>Add a Burger</h2>
+            <form id="create-form">
 
-<form id="create-form">
+                <div class="form-group">
+                    <label for="burger-type">New Burger</label>
+                    <textarea id="burger-type"></textarea>
+                </div>
 
-    <div class="form-group">
-        <label for="burger-type">New Burger</label>
-        <textarea id="burger-type"></textarea>
-    </div>
-
-    <button type="submit" id="createBurgerBtn">Add Burger</button>
-</form>
+                <button type="submit" id="createBurgerBtn" class="btn btn-primary">Add Burger</button>
+            </form>
+        </div>
+    </section>
+    <section class="col-md-4">
+    </section>
+</section>

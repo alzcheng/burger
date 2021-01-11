@@ -9,14 +9,13 @@ router.get('/', (req, res) => {
         const hbsObject = {
             burgers: data,
         };
-        console.log('hbsObject', hbsObject);
+        //console.log('hbsObject', hbsObject);
         res.render('index', hbsObject);
     });
 });
 
 //Insert one more burger into the list
 router.post('/api/newburger', (req, res) => {
-    console.log(req.body.burger_name, req.body.devoured);
     burger.insertOne(req.body.burger_name, req.body.devoured, (result) => {
         res.json({ id: result.insertId });
     });

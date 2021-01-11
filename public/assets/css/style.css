@@ -1,0 +1,23 @@
+.uneaten-burgers{
+    width: 18rem;
+    margin: 10px;
+    float: right;
+}
+
+.burgers-to-eat{
+    margin: 50px;
+}
+
+#devoured-burgers{
+    width: 18rem;
+    float: left;
+}
+
+.devour-burger-btn{
+    margin-top: auto; 
+    margin-bottom: auto;
+}
+
+#form-entry{
+    margin: auto; 
+}
