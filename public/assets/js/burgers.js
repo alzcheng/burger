@@ -36,4 +36,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         });
     }
+
+    //Devour a burger
+    const devourBurgerBtns = document.querySelectorAll('.devour-burger');
+    devourBurgerBtns.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            const id = e.target.getAttribute('data-id');
+
+            fetch(`/api/eat/${id}`, { method: 'PUT' }).then((res) => {
+                console.log(res.status);
+                location.reload();
+            })
+        })
+    });
 });

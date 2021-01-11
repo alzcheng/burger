@@ -22,15 +22,15 @@ const orm = {
                 cb(result);
             });
     },
-    updateOne(table, burger_name, devoured, cb) {
+    updateOne(table, id, cb) {
         let queryString = `UPDATE ${table}`;
-        queryString += `SET devoured = ?)`;
-        queryString += `WHERE burger_name = ?`;
+        queryString += ` SET devoured = 1 `;
+        queryString += `WHERE id = (?)`;
 
         console.log(queryString);
 
         connection.query(queryString,
-            [burger_name, devoured],
+            id,
             (err, result) => {
                 if (err) throw err;
                 cb(result);

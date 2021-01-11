@@ -14,11 +14,20 @@ router.get('/', (req, res) => {
     });
 });
 
+//Insert one more burger into the list
 router.post('/api/newburger', (req, res) => {
     console.log(req.body.burger_name, req.body.devoured);
     burger.insertOne(req.body.burger_name, req.body.devoured, (result) => {
         res.json({ id: result.insertId });
     });
 });
+
+//Devour a burger - setting devoured to true
+router.put('/api/eat/:id', (req, res) => {
+    burger.updateOne(req.params.id, (result) => {
+        res.json({ id: result.insertId });
+    });
+});
+
 
 module.exports = router; 
