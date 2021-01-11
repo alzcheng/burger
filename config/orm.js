@@ -10,8 +10,8 @@ const orm = {
     },
     insertOne(table, burger_name, devoured, cb) {
         let queryString = `INSERT INTO ${table}`;
-        queryString += `(burger_name, devoured)`;
-        queryString += `VALUE ?, ?;`;
+        queryString += ` (burger_name, devoured) `;
+        queryString += `VALUES (?,?);`;
 
         console.log(queryString);
 

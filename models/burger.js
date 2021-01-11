@@ -7,7 +7,7 @@ const burger = {
     },
 
     insertOne(burger_name, devoured, cb) {
-        orm.create('burgers', burger_name, devoured, (res) => cb(res));
+        orm.insertOne('burgers', burger_name, devoured, (res) => cb(res));
     },
 
     updateOne(burger_name, devoured, cb) {

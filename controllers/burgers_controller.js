@@ -14,4 +14,11 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/api/newburger', (req, res) => {
+    console.log(req.body.burger_name, req.body.devoured);
+    burger.insertOne(req.body.burger_name, req.body.devoured, (result) => {
+        res.json({ id: result.insertId });
+    });
+});
+
 module.exports = router; 

@@ -10,7 +10,7 @@
         <p><span class="label">Burger:</span> {{this.burger_name}}</p>
         <p><span class="label">Devour:</span> {{this.devoured}}</p>
 
-        <button data-id="{{this.id}}" class="devourBtn">Devour</button>
+        <button data-id="{{this.id}}" id="devourBtn">Devour</button>
     </li>
     {{/each}}
 </ul>
@@ -21,9 +21,9 @@
 <form id="create-form">
 
     <div class="form-group">
-        <label for="burger-type">Burger Type</label>
-        <textarea id="burger-type" rows="8" cols="40"></textarea>
+        <label for="burger-type">New Burger</label>
+        <textarea id="burger-type"></textarea>
     </div>
 
-    <button type="submit">Add Quote</button>
+    <button type="submit" id="createBurgerBtn">Add Burger</button>
 </form>
