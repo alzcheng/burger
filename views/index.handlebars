@@ -1,6 +1,12 @@
-<h1>Burger App</h1>
-
-<p>Manage quotes with this app</p>
+<section class="row top-row">
+    <section class="col-md-4"></section>
+    <section class="col-md-4">
+        <img src="https://www.thespruceeats.com/thmb/l4w6PvMqsz1EjueCAh_foPmYafM=/3456x3456/smart/filters:no_upscale()/garlic-burger-patties-333503-hero-01-e4df660ff27b4e5194fdff6d703a4f83.jpg"
+            alt="Burger Icon" id="burger-icon">
+        <h1 class="app-title">Eat-Da-Burger!</h1>
+    </section>
+    <section class="col-md-4"></section>
+</section>
 <section class="row">
     <section class="col-md-8">
         {{#each burgers}}
@@ -21,6 +27,9 @@
     </section>
     <section class="col-md-4">
         <div class="card" id="devoured-burgers">
+            <div class="card-header">
+                Devoured Burgers
+            </div>
             <ul class="list-group list-group-flush">
                 {{#each burgers}}
                 {{#if devoured}}
@@ -29,7 +38,6 @@
                 {{/each}}
             </ul>
         </div>
-
     </section>
 </section>
 <section class="row">
@@ -37,16 +45,12 @@
     </section>
     <section class="col-md-4">
         <div id="form-entry">
-
-            <h2>Add a Burger</h2>
-
+            <h2 class="input-title">Add a Burger</h2>
             <form id="create-form">
-
-                <div class="form-group">
-                    <label for="burger-type">New Burger</label>
-                    <textarea id="burger-type"></textarea>
+                <div class="input-group">
+                    <span id="new-burger-title" class="input-group-text">New Burger</span>
+                    <textarea id="burger-type" class="form-control" aria-label="With textarea"></textarea>
                 </div>
-
                 <button type="submit" id="createBurgerBtn" class="btn btn-primary">Add Burger</button>
             </form>
         </div>

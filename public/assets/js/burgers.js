@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     //Devour a burger
-    const devourBurgerBtns = document.querySelectorAll('.devour-burger');
+    const devourBurgerBtns = document.querySelectorAll('.devour-burger-btn');
     devourBurgerBtns.forEach((button) => {
         button.addEventListener('click', (e) => {
             const id = e.target.getAttribute('data-id');

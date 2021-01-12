@@ -1,3 +1,7 @@
+body{
+    background-color: orange;
+}
+
 .uneaten-burgers{
     width: 18rem;
     margin: 10px;
@@ -11,13 +15,44 @@
 #devoured-burgers{
     width: 18rem;
     float: left;
+    margin-top: 20px; 
 }
 
 .devour-burger-btn{
-    margin-top: auto; 
+    margin-top: 20px; 
     margin-bottom: auto;
 }
 
 #form-entry{
     margin: auto; 
+}
+
+.input-title{
+    margin-top: 50px; 
+    text-align: center;
+}
+
+#createBurgerBtn {
+    width: 50%;
+    margin-left:25%; 
+    margin-right: 50%;
+    margin-top: 15px; 
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+}
+
+#burger-icon{
+    margin-left: 25%;
+    margin-right: 20%;
+    margin-top: 25px; 
+    height: 75%; 
+    width: 50%;
+}
+
+.top-row{
+    margin-bottom: 50px;
 }
