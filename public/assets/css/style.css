@@ -56,3 +56,8 @@ h1{
 .top-row{
     margin-bottom: 50px;
 }
+
+#header-text{
+    color: white; 
+    background-color: green; 
+}
