@@ -3,20 +3,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (event) {
         console.info('DOM loaded');
     }
-    // Creating a burger
+    // Create a burger
     const createBurgerBtn = document.getElementById('createBurgerBtn');
 
     if (createBurgerBtn) {
         createBurgerBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
-            // Grabs the value of the textarea that goes by the name, "quote"
+            //create a newBurger object by getting the value of burger-type
             const newBurger = {
                 burger_name: document.getElementById('burger-type').value.trim(),
                 devoured: 0
             };
-            console.log(newBurger)
-            // Send POST request to create a new quote
+            // Send POST request to create a new burger
             fetch('/api/newburger', {
                 method: 'POST',
                 headers: {
@@ -38,11 +37,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     //Devour a burger
+    //Create an array of devour burger buttons
     const devourBurgerBtns = document.querySelectorAll('.devour-burger-btn');
     devourBurgerBtns.forEach((button) => {
         button.addEventListener('click', (e) => {
+            //For each devour burger, get the id associated with that burger
             const id = e.target.getAttribute('data-id');
-
+            //Use the put method to send the id through the api
             fetch(`/api/eat/${id}`, { method: 'PUT' }).then((res) => {
                 console.log(res.status);
                 location.reload();
