@@ -1,5 +1,5 @@
 const express = require('express');
-
+//set port for Heroku app
 const PORT = process.env.PORT || 8080;
 
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Set Handlebars.
+// Set Handlebars
 const exphbs = require('express-handlebars');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
